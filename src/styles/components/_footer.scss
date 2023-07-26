@@ -1,0 +1,7 @@
+@use "../abstracts" as a;
+
+footer {
+  height: 100px;
+  width: 100vw;
+  @include a.flex(row, center, center);
+}

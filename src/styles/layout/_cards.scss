@@ -1,0 +1,67 @@
+@use "../abstracts" as a;
+
+.category {
+  display: grid;
+  margin: 0 auto;
+  width: min(100%, 1600px);
+
+  &:nth-child(odd) {
+    background-color: a.$accent-color-yellow;
+    color: a.$color-grey-900;
+  }
+
+  &__body {
+    @include a.flex(column, flex-start, center);
+    padding: 2rem;
+
+    p {
+      margin: 2rem 0;
+    }
+  }
+}
+
+@include a.media-xs {
+  .category {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+@include a.media-sm {
+  .category {
+    grid-auto-flow: dense;
+
+    &:nth-child(2n + 1) > div:first-child {
+      grid-column: 2;
+    }
+  }
+}
+
+@include a.media-xxl {
+  .category {
+    // height: 600px;
+
+    &__image {
+      img {
+        height: 600px;
+      }
+    }
+  }
+
+  .category:nth-child(odd) > .category__image img {
+    float: right;
+  }
+  .category:nth-child(odd) > .category__body {
+    padding-left: 6rem;
+  }
+
+  .category:nth-child(even) > .category__image img {
+    float: left;
+  }
+  .category:nth-child(even) > .category__body {
+    padding-right: 6rem;
+  }
+}
+
+.product {
+  @extend .category;
+}

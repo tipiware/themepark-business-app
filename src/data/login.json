@@ -1,0 +1,16 @@
+{
+    "email": {
+      "label": "email",
+      "placeholder": "enter email",
+      "type": "email",
+      "required": true,
+      "autofocus": true
+    },
+    "password": {
+      "label": "password",
+      "placeholder": "enter password",
+      "type": "password",
+      "required": true,
+      "autofocus": false
+    }
+  }

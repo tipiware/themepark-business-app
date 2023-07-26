@@ -1,0 +1,31 @@
+@use "../abstracts" as a;
+
+.delete {
+  text-align: center;
+
+  h1 {
+    margin: 1rem 0;
+  }
+
+  span {
+    display: inline-block;
+    text-transform: uppercase;
+    background: a.$color-grey-900;
+    transform: rotate(15deg);
+    padding: 0.5rem;
+  }
+
+  &__buttons {
+    margin: 3rem 0;
+    @include a.flex(row, center, space-around);
+
+    :nth-child(1) {
+      background-color: a.$accent-color-green;
+      padding: 1rem 2rem;
+    }
+    :nth-child(2) {
+      background-color: a.$accent-color-red;
+      padding: 1rem 2rem;
+    }
+  }
+}

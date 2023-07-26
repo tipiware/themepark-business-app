@@ -1,0 +1,18 @@
+.product {
+  width: min(100%, 960px);
+  margin: 10rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &__content {
+    text-align: center;
+    margin-top: 5rem;
+
+    & p:nth-child(3) {
+      margin-top: 5rem;
+      font-style: italic;
+      font-size: 2rem;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+@use "../abstracts" as a;
+
+.btn {
+  border: 3px solid a.$color-grey-900;
+  border-radius: 4px;
+  padding: 1.5rem 3rem;
+  text-transform: uppercase;
+  display: flex;
+  align-self: center;
+  margin: 3rem 0;
+  @include a.transition-ease;
+
+  &:hover {
+    background-color: a.$color-grey-900;
+    color: a.$color-grey-300;
+  }
+}

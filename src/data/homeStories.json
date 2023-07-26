@@ -1,0 +1,30 @@
+[
+    {
+      "id": 0,
+      "title": "about us",
+      "text": [
+        "The About Us page of your website is an essential source of information for all who want to know more about your business. About Us pages are where you showcase your history, what is unique about your work, your company’s values, and who you serve.The design, written content, and visual or video elements together tell an important story about who you are and why you do it."
+      ],
+      "btn": false,
+      "imgPath": "about"
+    },
+    {
+      "id": 1,
+      "title": "menu",
+      "text": [
+        "Our menu is constantly being updated as our chefs continue to break the BBQ expereince boundaries"
+      ],
+      "btn": "menu",
+      "imgPath": "menu"
+    },
+    {
+      "id": 2,
+      "title": "Contact us",
+      "text": [
+        "What Makes a Great Contact Us Page? · They explain why a visitor should contact you and describe how you can help to solve your visitors"
+      ],
+      "btn": "contact us",
+      "imgPath": "contact"
+    }
+    
+  ]

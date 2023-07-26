@@ -1,0 +1,69 @@
+@use "../abstracts" as a;
+
+.story {
+  display: grid;
+  width: min(100%, 120rem);
+  margin: 0 auto;
+  grid-template-areas: "one" "two";
+
+  &:nth-child(1) {
+    background: a.$accent-color-grey;
+  }
+  &:nth-child(3) {
+    @extend :nth-child(1);
+  }
+
+  &__body {
+    @include a.flex(column, flex-start, center);
+    padding: 5rem;
+    grid-area: one;
+  }
+
+  &__image {
+    grid-area: two;
+    height: 80vh;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+.about {
+  background-image: url("../../assets/images/story_1.jpg");
+}
+.menu {
+  background-image: url("../../assets/images/story_2.jpg");
+}
+.contact {
+  background-image: url("../../assets/images/story_3.jpg");
+}
+
+@include a.media-lg {
+  .story {
+    &:nth-child(1) {
+      grid-template-areas: "one two";
+    }
+    &:nth-child(2) {
+      grid-template-areas: "two one";
+    }
+    &:nth-child(3) {
+      grid-template-areas: "one two ";
+    }
+
+    &__image {
+      height: auto;
+    }
+
+    .about {
+      width: 600px;
+    }
+    .menu {
+      width: 800px;
+    }
+    .contact {
+      width: 700px;
+      @include a.parallax;
+    }
+  }
+}

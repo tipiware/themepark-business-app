@@ -1,0 +1,46 @@
+@use "../abstracts" as a;
+
+#modal {
+  z-index: 1;
+}
+
+.modal__background {
+  position: fixed;
+  inset: 0;
+
+  background-image: linear-gradient(
+    to left top,
+    #f7f4e9,
+    #e6e6db,
+    #d4d9cd,
+    #c3cbc1,
+    #b2beb5
+  );
+  transition: all 0.3s ease-in-out;
+  overflow-y: initial;
+}
+
+.modal__content {
+  background: #ffffff;
+  position: relative;
+  z-index: 20;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(95%, 600px);
+  padding: 3rem;
+  border-radius: 16px;
+  max-height: 80vh;
+  min-height: auto;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  overflow-y: auto;
+}
+
+.modal__button {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, -5%);
+}

@@ -1,0 +1,23 @@
+{
+    "title": {
+      "label": "title",
+      "placeholder": "menu title",
+      "type": "text",
+      "required": true,
+      "autofocus": true
+    },
+    "info": {
+      "label": "long description",
+      "placeholder": "description",
+      "type": "text",
+      "required": true,
+      "autofocus": false
+    },
+    "thumbnail": {
+      "label": "",
+      "placeholder": "",
+      "type": "file",
+      "required": false,
+      "autofocus": false
+    }
+  }

@@ -1,0 +1,21 @@
+@use "../abstracts" as a;
+
+.card--item {
+  border-bottom: 2px solid a.$accent-color-grey;
+  @include a.flex(column, center, center);
+  margin: 1rem;
+  border-radius: 16px;
+
+  img {
+    @include a.adminCardImg;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    margin-bottom: 2rem;
+  }
+
+  &__links {
+    @include a.flex(row, center, space-evenly);
+    width: 100%;
+    padding: 3rem 0;
+  }
+}

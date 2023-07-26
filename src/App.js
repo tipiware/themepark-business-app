@@ -1,25 +1,61 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
-function App() {
+// pages
+import Admin from "./pages/Admin";
+import AdminCategory from "./pages/AdminCategory";
+import Categories from "./pages/Categories";
+import Contact from "./pages/Contact";
+import Footer from "./components/Footer";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Menu from "./pages/Menu";
+import Navbar from "./components/Navbar";
+import PasswordRecovery from "./pages/PasswordRecovery";
+import ProductDetail from "./pages/ProductDetail";
+import BadRoute from "./pages/BadRoute";
+
+// files
+import { useAuthContext } from "./hooks/useAuthContext";
+import "./styles/main.scss";
+
+export default function App() {
+  // properties
+  const { user, authIsReady } = useAuthContext();
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {authIsReady && (
+        <BrowserRouter>
+          {!user && <Navbar />}
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="menu" element={<Menu />} />
+            <Route path="menu/category/:id" element={<Categories />} />
+            {/* <Route path="menu/category/:title" element={<Categories />} /> */}
+            <Route path="menu/category/:id/:id" element={<ProductDetail />} />
+            <Route path="contact" element={<Contact />} />
+            <Route
+              path="login"
+              element={!user ? <Login /> : <Navigate to="admin" />}
+            />
+            <Route
+              path="login/admin"
+              element={user ? <Admin /> : <Navigate to="/" />}
+            />
+            <Route
+              // path="login/admin/category/:title"
+              path="login/admin/category/:id"
+              element={<AdminCategory />}
+            />
+            <Route
+              path="login/password_recovery"
+              element={<PasswordRecovery />}
+            />
+            <Route path="*" element={<BadRoute />} />
+          </Routes>
+          <Footer />
+        </BrowserRouter>
+      )}
     </div>
   );
 }
-
-export default App;
